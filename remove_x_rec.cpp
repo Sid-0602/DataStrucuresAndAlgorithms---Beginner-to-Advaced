@@ -2,31 +2,28 @@
 #include <cstring>
 using namespace std;
 
-void remox(char s[]){
-    //base case:
+void remove_x(char s[]){
+
+    //base value is empty string
     if(s[0] == '\0'){
         return;
     }
-    //if char is not x:
-    if(s[0] !='x'){
-        remox(s+1);
-    }
-
-    //if the char is x:
+    int i=1;
+    if(s[0]!= 'x'){
+        remove_x(s+1);
+    } 
     else{
-        int i=1;
-        for(;s[i]='\0';i++){
-            s[i-1]=s[i];
+        for(i=1;s[i] != '\0'; i++){
+            s[i-1] = s[i];
         }
         s[i-1]=s[i];
-        return remox(s); 
+        remove_x(s);
     }
-
 }
 
 int main(){
     char str[100];
     cin>>str;
-    remox(str);
+    remove_x(str);
     cout<<"The string without x is: " << str <<endl;
 }
