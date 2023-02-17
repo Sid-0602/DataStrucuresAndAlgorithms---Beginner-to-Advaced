@@ -26,7 +26,7 @@ int main(){
 
     //assigning values to object's properties:
 
-    s1.age=20;
+    s1.age = 20;
     s1.rollNumber = 101;
     s2.age = 21;
     s2.rollNumber = 102;
