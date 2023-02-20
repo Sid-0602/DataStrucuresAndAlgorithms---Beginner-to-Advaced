@@ -32,7 +32,7 @@ class Fraction{
 
 
         //Storing result of (f1+f2) in f1.
-        void add(Fraction f2){
+        void add(Fraction &f2){ //passing by reference
             int lcm = (this->denom) * (f2.denom);
 
             int x= lcm/(this->denom);
