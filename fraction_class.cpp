@@ -18,7 +18,7 @@ class Fraction{
 
         void simplify(){
             int gcd = 1;
-            int j = min(this->num, this-> denom);
+            int j = std::min(this->num, this-> denom);
             for(int i=1;i<=j;j++){
                 if(this->num % i ==0 && this->denom % i ==0){
                     gcd=i;
@@ -45,7 +45,15 @@ class Fraction{
 
             //calling simplify function:
             simplify();
+
         } 
+
+        void multiply(Fraction f2){
+            this->num = (this->num * f2.num);
+            this->denom = (this->denom) * f2.denom;
+
+            simplify();
+        }
         
 
 };
@@ -55,9 +63,7 @@ int main() {
 
     Fraction f1(10,2);
     Fraction f2(15,4);
-    f1.add(f2);
-    f1.print();
-    f2.print();
+    f1.multiply(f2);
     
     
 
