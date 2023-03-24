@@ -1,10 +1,11 @@
 #include <iostream>
 using namespace std;
-
 #include "queue_using_array.h"
 
+
+
 int main(){
-    queue_Array q(5);
+    queueArray q(5);
 
     q.enqueue(10);
     q.enqueue(20);
@@ -26,11 +27,6 @@ int main(){
     q.enqueue(70);
     cout<<q.front()<<endl;
     cout<<q.getSize()<<endl;
-    
-
-
-
-
 
 
 
