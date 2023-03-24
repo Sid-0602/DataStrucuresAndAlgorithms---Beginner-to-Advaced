@@ -1,78 +1,72 @@
-#include <iostream>
-using namespace std;
 
-class queue_Array{
+class queueArray{
+
     int *data;
-    int firstIndex, nextIndex, size, capacity;
+    int size;
+    int nextIndex, firstIndex,capacity;
 
     public:
 
-    //constructor: 
-    queue_Array(int s){
-        data = new int[s];
-        nextIndex = 0;
-        firstIndex = -1;
-        size=0; 
-        capacity = s;
-    }  
-
-    //getsize function: 
-
-    int getSize(){
-        return size;
-    }
-
-    //isEmpty function: 
-
-    bool isEmpty(){
-        return size==0;
-    }
-
-
-    //insert element: 
-    void enqueue(int element){
-        if(size == capacity){
-            cout<<"!! Queue Full !!"<<endl;
-            return; 
-        }
-        data[nextIndex] = element;
-        nextIndex = ((nextIndex+1) % capacity);
-        if(firstIndex ==-1){
-            firstIndex = 0;
-        }
-        size++;
-    }
-
-    //return first element: 
-    int front(){
-        if(isEmpty()){
-            cout<<"!! Queue is Empty !!"<<endl;
-            return 0;
-        }
-
-        return data[firstIndex];
-    }
-
-    //dequeue function: 
-
-    int dequeue(){
-
-        if(isEmpty()){
-            cout<<"!! Queue is Empty, can't perform dequeue operation !!"<<endl;
-            return 0;
-        }
-
-        int ans = data[firstIndex];
-        firstIndex = (firstIndex+1)%capacity; //to make circular rotation on queue. 
-        size--;
-        if(size == 0){
-            firstIndex=-1;
+        queueArray(int s){
+            data= new int[s];
             nextIndex=0;
+            firstIndex=-1;
+            size=0;
+            capacity=s;
         }
-        return ans;
-    }
+
+        int getSize(){
+            return size;
+        }
+
+        bool isEmpty(){
+               return size==0;
+        }
+
+        //insert element: 
+
+        void enqueue(int element){
+
+            if(size==capacity){
+                cout<<"!! Queue is FULL !!"<<endl;
+                return;
+            }
+            data[nextIndex] = element;
+            nextIndex = (nextIndex+1) % capacity;
+            size++;
+            if(firstIndex==-1){
+                firstIndex=0;
+            }
+
+        }
+
+        //remove element: 
+
+        int dequeue(){
+            if(isEmpty()){
+                cout<<"!! Queue is empty !!"<<endl;
+                return -1;
+            }
+
+            int dataelement = data[firstIndex];
+            firstIndex = (firstIndex+1) % capacity;
+            size--;
+
+            //reset firstIndex and nextIndex after queue is empty.
+            if(size == 0){
+                firstIndex=-1;
+                nextIndex=0; 
+            }
+            return dataelement;
+
+        }
+
+        int front(){
+            if(firstIndex==-1){
+                cout<<"!! Queue is NULL !!"<<endl;
+                return -1;
+            }
+            return data[firstIndex];
+        }
 
 };
-
-
-
