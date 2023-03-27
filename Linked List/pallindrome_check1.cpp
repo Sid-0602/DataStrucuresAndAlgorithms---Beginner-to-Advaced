@@ -16,6 +16,7 @@ public:
 };
 
 int getSize(Node *head){
+
     Node* temp = head;
     int counter=0;
     while(temp!=NULL){
@@ -28,25 +29,34 @@ int getSize(Node *head){
 bool isPalindrome(Node *head)
 {
     //Write your code here
-    int size = getSize(head);
-    Node* temp = head;
-    bool flag = true;
+	bool flag = true;
 
-    int *arr = new int(size);
+	if(head==NULL){
+		flag=false;
+		return flag;
+	}
+	else{
+		int size = getSize(head);
+		Node* temp = head;
 
-    for(int i=0; i<size;i++){
-        arr[i] = temp->data;
-        temp = temp->next;
-    }
 
-    for(int i=0;i<=size/2 && size!=0; i++){
-        if(arr[i]!=arr[size-i-1]){
-            flag=false;
-            break;
-        }
-    }
+		int *arr = new int(size);
 
-    return flag;
+		for(int i=0; i<size;i++){
+			arr[i] = temp->data;
+			temp = temp->next;
+		}
+
+		for(int i=0;i<=size/2 && size!=0; i++){
+			if(arr[i]!=arr[size-i-1]){
+				flag=false;
+				break;
+			}
+		}
+
+		return flag;
+	}
+    
     
 }
 
