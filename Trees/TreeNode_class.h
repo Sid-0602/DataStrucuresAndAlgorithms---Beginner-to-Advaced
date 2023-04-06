@@ -3,14 +3,15 @@ using namespace std;
 //initializing datatype as T:
 template <typename T>
 class TreeNode{
-    public:
+    public: 
     T data;
-    vector <TreeNode <T>*> children;
+    vector <TreeNode*> children; 
 
-    //constructor: 
+    //constructor:
 
-    TreeNode(T data){
+     TreeNode(T data){
         this->data = data;
-    }
+     }
 
 };
+
