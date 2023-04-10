@@ -32,7 +32,7 @@ TreeNode<int>* takeInput(){
         cin>>n;
 
         for(int i=0;i<n;i++){
-            TreeNode<int>* child = takeInput();
+            TreeNode<int>* child = takeInput(); //recursive call.
             root->children.push_back(child);
         }
 

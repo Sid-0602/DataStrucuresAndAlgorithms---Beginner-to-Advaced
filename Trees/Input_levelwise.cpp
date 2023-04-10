@@ -28,6 +28,8 @@ void printTree(TreeNode<int>* root){
 TreeNode<int>* takeInputLevelWise(){
     //logic is using queue to implement a tree levelwise.
 
+
+    //This is construction of root node: 
     int rootdata;
     cout<<"Enter the data: ";
     cin>>rootdata; 
