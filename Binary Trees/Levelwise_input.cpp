@@ -28,47 +28,47 @@ class BinaryTreeNode{
 //take input levelwise: 
 
 BinaryTreeNode<int>* takeInputLevelwise(){
-
-    int rootdata;
-    cout<<"Enter the root data: "<<endl;
-    cin>>rootdata;
-    if(rootdata == -1){
+    int rootData;
+    cout<<"Enter the data of root node: "<<endl;
+    cin>>rootData;
+    if(rootData == -1){
         return NULL;
     }
 
-    BinaryTreeNode<int>* root = new BinaryTreeNode<int>(rootdata);
-    queue<BinaryTreeNode<int>*> pendingNodes;
-    pendingNodes.push(root);
+    BinaryTreeNode<int>* root = new BinaryTreeNode<int>(rootData);
 
-    while(pendingNodes.size()!=0){
-        BinaryTreeNode<int>* front = pendingNodes.front();
-        pendingNodes.pop();
+    queue<BinaryTreeNode<int>*> pending_nodes;
+    pending_nodes.push(root);
 
-        //this is for left child data: 
-        cout<<"Enter left child of "<<front->data<<" node"<<endl;
-        int leftChilData;
-        cin>>leftChilData;
-        if(leftChilData!=-1){
-            BinaryTreeNode<int>* child = new BinaryTreeNode<int>(leftChilData);
-            front->left = child;
-            pendingNodes.push(child);
+    while(pending_nodes.size()!=0){
+        BinaryTreeNode<int>* front = pending_nodes.front();
+        pending_nodes.pop();
+
+        //take input of the left child: 
+        cout<<"Enter left child of "<<front->data<<endl;
+        int leftChildData;
+        cin>>leftChildData;
+        if(leftChildData!=-1){
+            BinaryTreeNode<int>* child = new BinaryTreeNode<int>(leftChildData);
+            front->left = child; 
+            pending_nodes.push(child);
         }
 
-        //this is for right child data: 
-        cout<<"Enter the right child of "<<front->data<<" node"<<endl;
+        //take input of right child: 
+        cout<<"Enter right child of: "<<front->data<<endl; 
         int rightChildData;
         cin>>rightChildData;
         if(rightChildData!=-1){
             BinaryTreeNode<int>* child = new BinaryTreeNode<int>(rightChildData);
             front->right = child;
-            pendingNodes.push(child);
+            pending_nodes.push(child);
         }
+
     }
 
-    return root; 
+    return root;
+   
 }
-
-
 
 
 void printTree(BinaryTreeNode<int>* root){
