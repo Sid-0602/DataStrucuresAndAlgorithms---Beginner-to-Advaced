@@ -22,7 +22,15 @@ int height(BinaryTreeNode<int>* root) {
         return 0; 
     }
 
-    return std::max(height(root->left),height(root->right)) + 1;
+    else{
+        int lheight = height(root->left);
+        int rhtight = height(root->right);
+
+        // Maximum function for l and r: 
+
+        return (1+ std::max(lheight,rhtight));
+    }
+   
 }
 
 
