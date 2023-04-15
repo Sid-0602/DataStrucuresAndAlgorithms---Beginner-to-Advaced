@@ -108,6 +108,8 @@ void printLevelATNewLine(BinaryTreeNode<int> *root) {
 
 int main() {
     BinaryTreeNode<int> *root = takeInput();
+
+    cout<<"******************* TREE IS  ********************"<<endl;
     printLevelATNewLine(root);
     cout<<endl;
 
@@ -116,12 +118,19 @@ int main() {
     cout<<"******************* INORDER CALL ********************"<<endl;
     cout<<"The Inorder tree  traversal is: "<<" ";
     inorderTraversal(root); 
-    delete root;
 
-
+    cout<<endl;
 
     cout<<"******************* PREORDER CALL ********************"<<endl;
     cout<<"Pre-order tree traversal is: "<<" ";
     preorderTraversal(root); 
+    
+    cout<<endl;
+
+
+    cout<<"******************* POSTORDER CALL ********************"<<endl;
+    cout<<"Post-order tree traversal is: "<<" ";
+    postorderTraversal(root); 
+
     delete root;
 }
