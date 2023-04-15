@@ -109,7 +109,7 @@ void printLevelATNewLine(BinaryTreeNode<int> *root) {
 int main() {
     BinaryTreeNode<int> *root = takeInput();
 
-    cout<<"******************* TREE IS  ********************"<<endl;
+    cout<<"******************* BINARY TREE IS  ********************"<<endl;
     printLevelATNewLine(root);
     cout<<endl;
 
