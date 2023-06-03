@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
-#include <queue>
+#include <algorithm>
+#include <cmath>
 
 using namespace std;
 
@@ -16,6 +17,42 @@ class BinaryTreeNode {
         right = NULL;
     }
 };
+
+int maximum(BinaryTreeNode<int> *root){
+    //base case:
+    if(root==NULL){
+        return INT_MIN;
+    }
+
+    return max(root->data, max(maximum(root->left),maximum(root->right)));
+
+}
+
+int minimum(BinaryTreeNode<int> *root){
+    //base case:
+    if(root==NULL){
+        return INT_MAX;
+    }
+
+    return min(root->data, min(minimum(root->left),minimum(root->right)));
+    
+}
+
+bool isBST(BinaryTreeNode<int> *root){
+    //base case:
+
+    if(root==NULL){
+        return true;
+    }
+
+    int leftMax = maximum(root->left);
+    int rightMin = minimum(root->right);
+
+    bool output = (root->data>leftMax && root->data<rightMin && isBST(root->left) && isBST(root->right));
+
+    return output;
+
+}
 
 
 
