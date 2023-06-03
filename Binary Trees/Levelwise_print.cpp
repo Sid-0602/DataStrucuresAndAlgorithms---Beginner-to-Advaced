@@ -35,6 +35,8 @@ void printLevelWise(BinaryTreeNode<int> *root) {
         if(front->left == NULL){
             cout<<"L:-1"<<",";
         }
+        pendingnodes_print.push(front->left);
+        
         if(front->right!=NULL){
             cout<<"R:"<<front->right->data;
         }
@@ -43,9 +45,8 @@ void printLevelWise(BinaryTreeNode<int> *root) {
         }
         cout<<endl;
 
-        pendingnodes_print.push(front->left);
+        
         pendingnodes_print.push(front->right);
-
         
     }
 }

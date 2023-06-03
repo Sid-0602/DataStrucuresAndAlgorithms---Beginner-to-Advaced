@@ -19,12 +19,12 @@ class BinaryTreeNode {
 
 
 void elementsInRangeK1K2(BinaryTreeNode<int>* root, int k1, int k2) {
-	// Write your code here
+	
+
+    //base case:
     if(root == NULL){
         return;
     }
-
-
 
     //left-recursive call on left subtree.
     elementsInRangeK1K2(root->left,k1,k2);

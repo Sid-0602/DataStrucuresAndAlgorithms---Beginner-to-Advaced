@@ -18,43 +18,6 @@ class BinaryTreeNode {
 };
 
 
-int minimum(BinaryTreeNode<int>* root){
-
-    //base case:
-    if(root==NULL){
-        return INT_MAX;
-    }
-
-    return std::min(root->data, std::min(minimum(root->left),minimum(root->right)));
-}
-
-int maximum(BinaryTreeNode<int>* root){
-
-    //base case:
-    if(root==NULL){
-        return INT_MIN;
-    }
-
-    return std::max(root->data,std::max(maximum(root->left), maximum(root->right)));
-}
-
-
-bool isBST(BinaryTreeNode<int> *root) {
-	// Write your code here
-
-    //base case:
-    if(root==NULL){
-        return true;
-    }
-
-    int left_max = maximum(root->left);
-    int right_min = minimum(root->right);
-
-
-    //4 conditions are checked: 
-    bool ans= (root->data > left_max) && (root->data<=right_min) && isBST(root->left) && isBST(root->right);
-
-}
 
 BinaryTreeNode<int>* takeInput() {
     int rootData;
