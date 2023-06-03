@@ -25,7 +25,7 @@ bool flag=false;
 bool searchInBST(BinaryTreeNode<int> *root , int k) {
 	// Write your code here
 
-    //base case:
+    //base case for recursion: 
     if(root==NULL){
         return flag;
     }
@@ -33,17 +33,16 @@ bool searchInBST(BinaryTreeNode<int> *root , int k) {
     if(k==root->data){
         flag=true;
         return flag;
-    }   
-
-    if(k>root->data){
+    }
+    else if(k>root->data){
         searchInBST(root->right,k);
     }
-    else if(k<root->data){
+    else{
         searchInBST(root->left,k);
     }
 
-
     return flag;
+
 
 }
 
