@@ -24,7 +24,7 @@ int maximum(BinaryTreeNode<int> *root){
         return INT_MIN;
     }
 
-    return max(root->data, max(maximum(root->left),maximum(root->right)));
+    return max(root->data, max(maximum(root->left),maximum(root->right))); //recursive call for both left, right tree.
 
 }
 
@@ -34,7 +34,7 @@ int minimum(BinaryTreeNode<int> *root){
         return INT_MAX;
     }
 
-    return min(root->data, min(minimum(root->left),minimum(root->right)));
+    return min(root->data, min(minimum(root->left),minimum(root->right))); //recursive call for both left,right tree.
     
 }
 
@@ -48,7 +48,7 @@ bool isBST(BinaryTreeNode<int> *root){
     int leftMax = maximum(root->left);
     int rightMin = minimum(root->right);
 
-    bool output = (root->data>leftMax && root->data<rightMin && isBST(root->left) && isBST(root->right));
+    bool output = (root->data>leftMax && root->data<rightMin && isBST(root->left) && isBST(root->right)); //recursive call to find out if isBST.
 
     return output;
 
