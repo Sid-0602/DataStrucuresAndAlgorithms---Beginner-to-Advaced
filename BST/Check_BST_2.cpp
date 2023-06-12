@@ -18,15 +18,15 @@ class BinaryTreeNode {
     }
 };
 
+// is BST return class:
+
 class isBSTReturn{
+
     public: 
         bool isBST;
         int minimum;
         int maximum;
-
-
 };
-
 
 int maximum(BinaryTreeNode<int> *root){
     //base case:
@@ -64,33 +64,35 @@ bool isBST(BinaryTreeNode<int> *root){
 
 }
 
+//this is object of the class isBSTReturn: 
+
 isBSTReturn isBST2(BinaryTreeNode<int> *root){
+
+    // if the root is null then fill value of object output as true, INT_MIN and INT_MAX.
     if(root==NULL){
         isBSTReturn output;
         output.isBST = true;
-        output.minimum = INT_MAX;
         output.maximum = INT_MIN;
+        output.minimum = INT16_MAX;
 
         return output;
     }
+
+    // leftOutput and rightOtput will have 3 arguments: bool, min and max. 
+    isBSTReturn  leftOutput  = isBST2(root->left);
+    isBSTReturn rightOutput = isBST2(root->right);
+
+    int minimum  = min(root->data,min(leftOutput.minimum,rightOutput.minimum));
+    int maximum = max(root->data, max(leftOutput.maximum,rightOutput.maximum));
+
+    bool isBSTFinal = (root->data>leftOutput.maximum) && (root->data<rightOutput.minimum) && (leftOutput.isBST) && (rightOutput.isBST);
+
     isBSTReturn output;
-
-    isBSTReturn leftoutput = isBST2(root->left);
-    isBSTReturn rightoutput = isBST2(root->right);
-
-    int minimum = min(root->data, min(leftoutput.minimum, rightoutput.minimum));
-    int maximum = max(root->data, max(leftoutput.maximum, rightoutput.maximum));
-
-    bool isBSTFinal = (root->data>leftoutput.maximum) && (root->data<rightoutput.maximum) && leftoutput.isBST && rightoutput.isBST;
-
+    output.isBST = isBSTFinal;
     output.minimum = minimum;
     output.maximum = maximum;
-    output.isBST = isBSTFinal;
 
     return output;
-
-
-
 
 }
 
