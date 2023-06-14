@@ -62,7 +62,7 @@ bool isBST3(BinaryTreeNode<int>* root, int min = INT_MIN, int max = INT_MAX){
     bool isLeftOk = isBST3(root->left,min, max=root->data-1); //changing the max value in range.
     bool isRightOK = isBST3(root->right, min = root->data, max); //changing the min value in range.
 
-    return isLeftOk && isRightOK;
+    return (isLeftOk && isRightOK);
 
 }
 
