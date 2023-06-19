@@ -3,10 +3,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-    int search(vector<int>& nums, int target) {
-        int search(vector<int>& nums, int target) {
-        int start=0, end=nums.size()-1;
-        while(start<=end){
+int search(vector<int>& nums, int target) {
+    int start=0, end=nums.size()-1;
+    while(start<=end){
             int mid=start + (end-start)/2;
             if(nums[mid] == target) return mid;
             else if(nums[mid]>=nums[start]){
@@ -19,8 +18,8 @@ using namespace std;
             }
         } 
         return -1;  
-	}
 }
+
 
 int main(){
 	vector<int> nums = {2,3,1};
