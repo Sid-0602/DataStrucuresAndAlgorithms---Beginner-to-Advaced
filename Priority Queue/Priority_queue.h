@@ -18,7 +18,7 @@ class PriorityQueue{
         int ans = pq[0];
         pq[0] = pq[pq.size()-1]; //assigning the value of
 
-        pq.pop_back(pq.size()-1); //removing the last element. 
+        pq.pop_back(); //removing the last element. 
 
     }
 
