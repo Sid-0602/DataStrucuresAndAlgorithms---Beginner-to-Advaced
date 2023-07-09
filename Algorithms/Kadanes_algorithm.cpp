@@ -37,11 +37,26 @@ int maxSubArraySumN2(int arr[],int n){
 }
 
 
-//Optimal Solution: Using kanade's algorithms: 
+//Optimal Solution: Using kadane's algorithms: 
 
 int maxSubArraySum(int arr[],int n){
 
+    int max_global = INT_MIN;
+    int sum=0;
+    for(int i=0;i<n;i++){
+        sum+=arr[i];
 
+        if(sum>max_global){
+            max_global = sum;
+        }
+    
+        if(sum<0){
+            sum=0;
+        }
+        
+    }
+
+    return max_global;
 }
 
 
