@@ -64,9 +64,47 @@ int main(){
     }
     cout<<endl;
 
+    //delete element in vector: 
+
+    v.erase(v.begin()+1); //it deletes second element from vector.
+
+    //insert element in vector: 
+    v.insert(v.begin(),6); //it inserts 6 at the start of the vector.
+    v.insert(v.begin()+1,20); //it inserts 20 at second position of vector.
+    v.insert(v.begin()+2,2,15); //it inserts 2 15's starting from the third element.
 
 
+    for(auto it:v){
+        cout<<it<<" ";
+    }
 
+    //copy vector: 
+    vector<int> copy(2,100);
+    v.insert(v.begin(),copy.begin(),copy.end());
+
+    //pop-back of vector: 
+    cout<<"This pops the last element of vector"<<endl;
+    v.pop_back();
+
+    //swap of vectors:
+    cout<<"This swaps the vectors"<<endl;
+    vector<int>v1_copy={10,20};
+    vector<int>v2_copy={30,40};
+    v1_copy.swap(v2_copy); 
+
+    cout<<"Vector 1 is: "<<endl;
+    for(auto it:v1_copy){
+        cout<<it<<" ";
+    }
+    cout<<endl;
+    cout<<"Vector 2 is: "<<endl;
+    for(auto it:v2_copy){
+        cout<<it<<" ";
+    }
+
+    //clear the vector: 
+    v1_copy.clear();
+    v2_copy.clear();
 
 
 
