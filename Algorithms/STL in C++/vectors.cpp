@@ -97,15 +97,29 @@ int main(){
         cout<<it<<" ";
     }
     cout<<endl;
-    cout<<"Vector 2 is: "<<endl;
+    cout<<"Vector 2 is: ";
     for(auto it:v2_copy){
         cout<<it<<" ";
     }
+    cout<<endl;
 
     //clear the vector: 
     v1_copy.clear();
     v2_copy.clear();
 
+    //Some important vector operations: 
 
+    // 1. Sort the array: 
+    sort(v.begin(),v.end());
+
+    // 2. Sort the vector into descending order:
+    sort(v.rbegin(),v.rend());
+
+    // 3. Reverse the vector: 
+    reverse(v.begin(),v.end());
+
+    for(auto it:v){
+	    cout<<it<<" ";
+	}
 
 }
