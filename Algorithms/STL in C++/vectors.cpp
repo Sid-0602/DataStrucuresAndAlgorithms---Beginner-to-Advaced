@@ -118,6 +118,9 @@ int main(){
     // 3. Reverse the vector: 
     reverse(v.begin(),v.end());
 
+    // 4. Check if Empty:
+    cout<<"Is the vector Empty: "<< v.empty()<<endl;
+
     for(auto it:v){
 	    cout<<it<<" ";
 	}
