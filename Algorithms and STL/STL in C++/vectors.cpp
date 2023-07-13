@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    //intialise a vector: 
+    //initialize a vector: 
 
     vector<int> v;
     vector<int> v1(5);  //this makes an vector of size 5.
