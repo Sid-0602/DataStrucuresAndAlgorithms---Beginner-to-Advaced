@@ -20,7 +20,7 @@ int main(){
     cout<<ourMap["abc"]<<" "<<ourMap["bcd"]<<endl;
     cout<<ourMap.at("abc")<<endl;
     
-    //accessing the non-existing key: 
+    // accessing the non-existing key: 
     // cout<<ourMap["ghi"]<<endl; --> This gives the output as 0. 
 
     //check presence: 
@@ -34,7 +34,7 @@ int main(){
     //size function: 
     cout<<"Size of Map: "<<ourMap.size()<<endl;
     ourMap["mnk"] = 2; //inserting one more element
- 
+
     cout<<"Size of Map: "<<ourMap.size()<<endl;
 
     //erase am element: 
