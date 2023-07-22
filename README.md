@@ -3,10 +3,8 @@
 This repo contains all the questions and concepts of DSA I have read and solved. Topic/Concept name is given next to each code for better understanding.
 The language used to solve and program the algorithms is C++ and C.
 
-### Note: gitignore commands:
+### Some helpful links to visit
 
-![1689689873298](image/README/1689689873298.png)
+[cplusplus ](https://cplusplus.com/)-  Offcial Documentation for C++ language
 
-
-### Hashing - Prime values which improves it!
-![1689913865665](image/README/1689913865665.png)
+[geeksForgeeks](https://www.geeksforgeeks.org/data-structures/) - All references and concepts for Data Structure and Algorithms
