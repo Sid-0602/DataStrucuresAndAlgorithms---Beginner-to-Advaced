@@ -24,9 +24,6 @@ class TrieNode{
         isTerminal = false;
     }
     
-    ~TrieNode(){
-        delete [] children;
-    }
 
 };
 
