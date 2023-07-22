@@ -73,6 +73,7 @@ class Trie{
         insertWordHelper(root,word);
     }
 
+    //search function in tries: 
 
     bool searchHelper(TrieNode*root, string word){
         //base case: if word length is zero, then check if root->terminal is true or not to check for terminal. 
@@ -98,6 +99,33 @@ class Trie{
         
         return searchHelper(root,word);
     }
+
+    //remove function: 
+
+    void removeWordHelper(TrieNode* root,string word){
+        //base case: to remove a word just make isTerminal of the word as false.
+
+        if(word.size()==0){
+            root->isTerminal = false;
+            cout<<"Word deleted successfully!!"<<endl;
+            return;
+        }
+
+        //small calculations: 
+        int index = word[0] - 'a';
+        if(root->children[index]!=NULL){
+            return removeWordHelper(root->children[index],word.substr(1));
+        }
+        else{
+            cout<<"Cannot delete as word does not exist!!"<<endl;
+            return;
+        }
+
+    }
+
+    void removeWord(string word){
+        removeWordHelper(root,word);
+    }
 };
 
 
@@ -120,6 +148,11 @@ int main(){
             cout<<"Enter word to be searched: ";
                 cin >> word;
                 cout << (t.search(word) ? "true\n" : "false\n");
+                break;
+            case 3:  // search
+            cout<<"Enter word to be removed: ";
+                cin >> word;
+                t.removeWord(word);
                 break;
             default:
                 return 0;
