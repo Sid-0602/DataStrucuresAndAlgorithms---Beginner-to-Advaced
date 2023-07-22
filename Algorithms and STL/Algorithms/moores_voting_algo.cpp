@@ -3,7 +3,7 @@ using namespace std;
 
 
 int majorityElement(vector<int>& nums){
-    //most optimal solution is: Moore's voting algorithm: 
+    //most optimal solution is: Moore's voting algorithm:  This takes O(N) time but doesn't use extra space unlike maps. 
     int count=0;
     int element ;
     for(int i=0;i<nums.size();i++){
