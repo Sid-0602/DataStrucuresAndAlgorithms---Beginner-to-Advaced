@@ -55,7 +55,7 @@ class Trie{
 
         //small calculation: 
         int index = word[0] - 'a'; //mapping word with index. word[0] represents first letter of word.
-        TrieNode *child; //it points to children index and of datatype TrieNode.  
+        TrieNode *child; //it points to children index and of datatype TrieNode. It keeps changing. 
         if(root->children[index]!=NULL){
             child = root->children[index]; //child has address to the index 
         }else{
@@ -73,4 +73,60 @@ class Trie{
         insertWordHelper(root,word);
     }
 
+
+    bool searchHelper(TrieNode*root, string word){
+        //base case: if word length is zero, then check if root->terminal is true or not to check for terminal. 
+        if(word.size()==0){
+            return root->isTerminal;
+        }
+
+        //small calculation: 
+        int index= word[0]-'a';
+        if(root->children[index]!= NULL){
+            return searchHelper(root->children[index],word.substr(1));
+        }
+        else{
+            return false;
+        }
+
+    }   
+
+    bool search(string word){
+        if(word.length()==0){
+            return false;
+        }
+        
+        return searchHelper(root,word);
+    }
 };
+
+
+int main(){
+    int choice;
+    cout<<"Enter a choice: "<<endl;
+    cin >> choice;
+    Trie t;
+
+    while (choice != -1) {
+        string word;
+        bool ans;
+        switch (choice) {
+            case 1:  // insert
+                cout<<"Enter the word to insert: ";
+                cin >> word;
+                t.insertWord(word);
+                break;
+            case 2:  // search
+            cout<<"Enter word to be searched: ";
+                cin >> word;
+                cout << (t.search(word) ? "true\n" : "false\n");
+                break;
+            default:
+                return 0;
+        }
+        cout<<"Enter a choice: "<<endl;
+        cin >> choice;
+    }
+
+    return 0;
+}
