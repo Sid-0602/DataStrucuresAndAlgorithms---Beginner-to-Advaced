@@ -26,8 +26,3 @@ class TrieNode{
     
 
 };
-
-
-int main(){
-
-}
