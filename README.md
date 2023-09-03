@@ -7,9 +7,9 @@ The language used to solve and program the algorithms is C++ and C.
 While this repository primarily serves as a personal log of my DSA Solutions, I welcome contributions and discussions from others. If you have a different or more optimized solution, feel free to open a pull request.
 
 ### Platforms from which these questions can be viewd: 
-Leetcode: https://leetcode.com/
-GFG Practice: https://practice.geeksforgeeks.org/explore
-CodeStudio (Coding Ninjas): https://www.codingninjas.com/studio/home
+1. Leetcode: https://leetcode.com/
+2. GFG Practice: https://practice.geeksforgeeks.org/explore
+3. CodeStudio (Coding Ninjas): https://www.codingninjas.com/studio/home
 
 ### Some helpful links to visit
 
