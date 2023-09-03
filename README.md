@@ -1,6 +1,6 @@
-# Data Strcutures and Algorithms || C++
+# Data Strcutures and Algorithms || C++ || 250+ Questions
 
-This repo contains all the questions and concepts of DSA I have studied and solved. This serves as a personal tracker of my progress and allows others to review and discuss the solutions. Topic/Concept name is given next to each code for better understanding.
+This repository contains all the questions and concepts of DSA I have studied and solved. This serves as a personal tracker of my progress and allows others to review and discuss the solutions. Topic/Concept name is given next to each code for better understanding.
 The language used to solve and program the algorithms is C++ and C.
 
 ### Contributers
