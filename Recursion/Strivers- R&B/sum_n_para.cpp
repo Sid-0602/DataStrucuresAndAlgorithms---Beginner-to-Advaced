@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*THIS IS PARAMETERIZED EXECUTION */
 
 void SumOfN(int n, int sum){
     
