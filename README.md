@@ -10,6 +10,7 @@ While this repository primarily serves as a personal log of my DSA Solutions, I 
 1. Leetcode: https://leetcode.com/
 2. GFG Practice: https://practice.geeksforgeeks.org/explore
 3. CodeStudio (Coding Ninjas): https://www.codingninjas.com/studio/home
+4. Striver's SDE Sheet and Take you forward: https://www.youtube.com/@takeUforward 
 
 ### Some helpful links to visit
 
