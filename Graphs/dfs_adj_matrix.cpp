@@ -7,7 +7,7 @@ void print(int** edges, int n, int sv, bool* visited){
     cout<<"Starting vertex: "<<sv<<endl;
     visited[sv]=true; //mark this as visited.
     for(int i=0;i<n;i++){
-        if(i==sv){ continue;}
+        if(i==sv){ continue;} //if current index is starting index, then continue.
         if(edges[sv][i]==1){
             if(visited[i]){continue;}
             print(edges,n,i,visited); //if edge is present, then starting index is replaced by i for further recursive call.
