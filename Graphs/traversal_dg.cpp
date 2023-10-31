@@ -3,8 +3,42 @@
 using namespace std;
 
 
-void bfs(int **edges, int n){
+int divided_components = 0; //this will give number of components graph is divided into. 
+void print_bfs(int **edges, int n, int sv, bool *visitedBFS){
+    queue<int> pendingVertex; 
+    pendingVertex.push(sv);
+    visitedBFS[sv]=true;
 
+    while(!pendingVertex.empty()){
+        int currentIndex = pendingVertex.front();
+        pendingVertex.pop();
+        cout<<currentIndex<<endl;
+        for(int i=0;i<n;i++){
+            if(currentIndex==i){continue;}
+            if(edges[currentIndex][i]==1){
+                if(visitedBFS[i]){continue;}
+                pendingVertex.push(i);
+                visitedBFS[i]=true;
+            }
+        }
+
+    }
+}
+
+void bfs(int **edges, int n){
+    bool *visitedBSF = new bool[n];
+
+    for(int i=0;i<n;i++){
+        visitedBSF[i]=false;
+    }
+
+    for(int i=0;i<n;i++){
+        if(!visitedBSF[i]){
+            print_bfs(edges,n,i,visitedBSF);
+        }
+    }
+
+    delete [] visitedBSF;
 }
 
 
