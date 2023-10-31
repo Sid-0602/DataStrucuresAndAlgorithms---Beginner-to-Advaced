@@ -67,6 +67,7 @@ void dfs(int **edges, int n){
     for(int i=0;i<n;i++){
         //if the vertex is not visited, then call the vertex with i as starting index.
         if(!visitedDFS[i]){
+            divided_components++;
             print_dfs(edges,n,i,visitedDFS);
         }
     }
@@ -99,4 +100,6 @@ int main(){
 
     cout<<"This is BFS for the graph: "<<endl;
     bfs(edges,n);
+
+    cout<<"The graph is divided into : "<<divided_components<<" components"<<endl;
 }
